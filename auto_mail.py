@@ -32,13 +32,13 @@ def send_email(to='menniablaise@gmail.com', text_message='test email', html=Fals
     </html>
     """
 
-    # Turn these into plain/html MIMEText objects
-    part1 = MIMEText(text_message, "plain")
-    message.attach(part1)
-
-    if html == True:
+    # Turn these into plain/html MIMEText objects --- Check if html or plain message
+    if html:
         part2 = MIMEText(html_message, "html")
         message.attach(part2)
+    else:
+        part1 = MIMEText(text_message, "plain")
+        message.attach(part1)
 
     # Add HTML/plain-text parts to MIMEMultipart message
     # The email client will try to render the last part first

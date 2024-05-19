@@ -18,12 +18,12 @@ def runJobListingAppAuto():
 
     send_email(html=True, html_message=html_content)
 
-runJobListingAppAuto()
+# runJobListingAppAuto()
 
 # schedule.every().day.at("10:30").do(runJobListingAppAuto)
-# schedule.every(5).minutes.do(runJobListingAppAuto)
-# while True:
+schedule.every(5).minutes.do(runJobListingAppAuto)
+while True:
     # Checks whether a scheduled task 
     # is pending to run or not
-    # schedule.run_pending()
-    # time.sleep(1)
+    schedule.run_pending()
+    time.sleep(1)

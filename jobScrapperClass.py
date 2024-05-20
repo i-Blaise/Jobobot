@@ -59,7 +59,7 @@ class JobScrapperClass:
 
         if count >= 3:
             forwardJob = True
-            print(jobUrl)
+            # print(jobUrl)
 
         return forwardJob
 

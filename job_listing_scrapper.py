@@ -3,7 +3,10 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 def jobScrapper():
-    url = "https://www.indeed.com/jobs?q=php+developer&l=Remote&from=searchOnHP&vjk=4f4124b6ae711363"
+    # url = "https://www.ghanajob.com/job-vacancies-search-ghana/?utm_source=site&utm_medium=link&utm_campaign=search_split&utm_term=all_jobs&f%5B0%5D=im_field_offre_metiers%3A31"
+    # url = "https://www.jobsinghana.com/jobs/indexnew.php?device=d"
+    # url = "https://www.jobberman.com.gh/jobs"
+    url = "https://jobwebghana.com/jobs/"
 
     # try:
     response = requests.get(url)
@@ -14,10 +17,11 @@ def jobScrapper():
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # tags = soup.find_all("a", class_="tw-w-full h-100 tw-absolute offer-link tw-z-10")
-    title = soup.find_all(id="job_4f4124b6ae711363").getText()
+    # title = soup.find_all(id="job_4f4124b6ae711363").getText()
+    workFrom = soup.find_all(id="titlo")
 
 
-    print(type(title))
+    print(workFrom)
     
     # job_dict = { }
 
